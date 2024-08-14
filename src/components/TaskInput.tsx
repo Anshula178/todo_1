@@ -4,14 +4,14 @@ interface InputProps{
 inputValue: string;
  handleInputValue: (inputValue: string) => void;
   priority: string;
-  handleEditPriority: (priority: string) => void; 
+  handlePriorityInput: (priority: string) => void; 
    isEditMode: boolean;
     error: string;
      handleUpdate: () => false | undefined;
       handleAdd: () => false | undefined; 
 }
 
-const TaskInput:React.FC<InputProps> = ({inputValue,handleInputValue,priority,handleEditPriority,isEditMode,handleUpdate,handleAdd,error}) => {
+const TaskInput:React.FC<InputProps> = ({inputValue,handleInputValue,priority,handlePriorityInput,isEditMode,handleUpdate,handleAdd,error}) => {
   return (
     <div className="space-y-2">
     <div className="flex items-center gap-4">
@@ -25,7 +25,7 @@ const TaskInput:React.FC<InputProps> = ({inputValue,handleInputValue,priority,ha
       <select
         value={priority}
         className="border border-blue-700 px-2 py-1 rounded-md"
-        onChange={(event) => handleEditPriority(event.target.value)}
+        onChange={(event) => handlePriorityInput(event.target.value)}
       >
         <option value="High">High</option>
         <option value="Low">Low</option>
