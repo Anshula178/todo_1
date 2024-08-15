@@ -23,15 +23,19 @@ const { editId,
   handleCompleteToggle,
   filteredList,}=useTodoList()
   return (
-    <div className="min-h-screen mt-32">
+    <div className=" bg-slate-950 min-h-screen ">
 
-      <div className="min-h-76 flex items-center justify-center">
-        <div className="max-w-[620px] items-center w-full p-2 rounded-md bg-slate-200 shadow-sm space-y-4">
-          <h3>Todo List</h3>
-         <TaskInput inputValue={inputValue}  handleInputValue={handleInputValue} priority={priority} handlePriorityInput={handlePriorityInput} isEditMode={isEditMode}  error={error} handleUpdate={handleUpdate} handleAdd={handleAdd}/>
-          <div className="space-y-2 min-h-20">
-
-         <TaskFilter handleAllPendingCompleted={handleAllPendingCompleted} filter={filter}/>
+      <div className="min-h-76 flex items-center justify-center ">
+     
+        <div className="max-w-[620px] items-center w-full p-2 rounded-md  shadow-sm space-y-4 mt-56">
+        <h3 className="text-white  font-extrabold text-4xl">T O D O </h3>
+        
+          <div className="space-y-2 px-4 py-4  min-h-20 bg-slate-900">
+            <div>
+            <TaskInput inputValue={inputValue}  handleInputValue={handleInputValue} priority={priority} handlePriorityInput={handlePriorityInput} isEditMode={isEditMode}  error={error} handleUpdate={handleUpdate} handleAdd={handleAdd}/>
+            </div>
+          
+           <TaskFilter handleAllPendingCompleted={handleAllPendingCompleted} filter={filter}/>
             {filteredList.length === 0 ? (
               <p className="text-center">Nothing for today</p>
             ) : (
