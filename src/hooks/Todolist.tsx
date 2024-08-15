@@ -38,6 +38,12 @@ const useTodoList = () => {
 
   const handleInputValue = (inputValue: string) => setState((prev) => ({ ...prev, inputValue }));
   const handlePriorityInput = (priority: string) => setState((prev) => ({ ...prev, priority }));
+  const handleEditPriority = (id:number,priority: string) =>  setState((prev) => ({
+    ...prev,
+    todoList: prev.todoList.map((todo) =>
+      todo.id === id ? { ...todo, priority } : todo
+    ),
+  }));;
 
   const handleAdd = () => {
     if (!validateInputValue()) return false;
@@ -111,6 +117,7 @@ const useTodoList = () => {
     handlePriorityInput,
     handleAdd,
     handleDelete,
+    handleEditPriority,
     handleEdit,
     handleUpdate,
     handleAllPendingCompleted,
