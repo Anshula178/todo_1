@@ -11,7 +11,7 @@ interface inputProps{
 const Input:React.FC<inputProps> = ({type,value,placeholder,onChange}) => {
   return (
     
-      <input type={type} value={value} placeholder={placeholder} className={`flex-1 text-slate-400 px-2 py-1 rounded-md bg-slate-700 ${type==="checkbox"? "mr-2":""}`} onChange={onChange} />
+      <input type={type} value={value} placeholder={placeholder} className={`flex-1 text-slate-400 px-2 py-1 rounded-md bg-slate-800 ${type==="checkbox"? "mr-2":""}`} onChange={onChange} />
    
   )
 }

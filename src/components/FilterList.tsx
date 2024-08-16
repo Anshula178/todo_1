@@ -14,7 +14,7 @@ import Select from "./Select";
 
 const FilterList:React.FC<filtereListProps> = ({id,text,completed,priority,handleCompleteToggle,handleEditPriority,handleDelete,handleEdit,editId}) => {
   return (
-    <div key={id} className="bg-slate-700 flex items-center gap-2 px-8  justify-between rounded-md p-2 text-lg">
+    <div key={id} className="bg-slate-800 flex items-center gap-2 px-4  justify-between rounded-md py-2 text-lg">
     <div className="flex">
       <Input
         type="checkbox"
