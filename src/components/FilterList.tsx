@@ -1,4 +1,7 @@
 import React from "react";
+import Button from "./Button";
+import Input from "./Input";
+import Select from "./Select";
 
  interface filtereListProps{
     text: string; id: number; completed: boolean; priority: string;
@@ -13,37 +16,33 @@ const FilterList:React.FC<filtereListProps> = ({id,text,completed,priority,handl
   return (
     <div key={id} className="bg-slate-700 flex items-center gap-2 px-8  justify-between rounded-md p-2 text-lg">
     <div className="flex">
-      <input
+      <Input
         type="checkbox"
         checked={completed}
-        className="mr-2"
         onChange={() => handleCompleteToggle(id)}
       />
-      <span className={` text-slate-400${completed ?"line-through":""}`}>{text}</span>
+      <span className={` text-slate-400${completed ? "line-through  ":""}`}>{text}</span>
     </div>
     <div className="flex items-center gap-1">
-     
-      <select
+      <Select
         value={priority}
-        className=" bg-slate-700 text-slate-400 px-2 py-1 rounded-md"
         onChange={(event) => handleEditPriority(id,event.target.value)}
+        disabled={id === editId}
       >
         <option value="High">High</option>
         <option value="Low">Low</option>
-      </select>
-      <button
-        className="bg-red-700 text-white p-1  rounded-md disabled:opacity-10"
+      </Select>
+      <Button
         disabled={id === editId}
         onClick={() => handleDelete(id)}
-      >
-        Delete
-      </button>
-      <button
-        className="bg-purple-800 text-white p-1 m-1 rounded-md disabled:opacity-10"
+        buttonType='delete'
+        text='Delete'
+      />
+      <Button
         onClick={() => handleEdit(id, text,priority)}
-      >
-        Edit
-      </button>
+        buttonType='edit'
+        text='Edit'
+      />
     </div>
   </div>
   )

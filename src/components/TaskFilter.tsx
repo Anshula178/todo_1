@@ -11,7 +11,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({ filter, handleAllPendingComplet
   
   return (
     <div>
-      <div className="flex justify-center m-3 px-3 py-3">
+      <div className="flex justify-center  ">
         {
           filterOption.map((option)=>(
             <Button key={option} text={option} isActive={filter === option} onClick={() => handleAllPendingCompleted(option)}/>

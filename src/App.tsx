@@ -32,14 +32,14 @@ const { editId,
         <h3 className="  font-extrabold text-4xl bg-gradient-to-b from-purple-600 to-blue-900 bg-clip-text text-transparent">T O D O </h3>
         
           <div className="space-y-2 px-4 py-4  min-h-20 bg-slate-900">
-            <div>
+           
             <TaskInput inputValue={inputValue}  handleInputValue={handleInputValue} priority={priority} handlePriorityInput={handlePriorityInput} isEditMode={isEditMode}  error={error} handleUpdate={handleUpdate} handleAdd={handleAdd}/>
-            </div>
+          
             {filteredList.length === 0 ? (
               <p className="text-center text-slate-400">Nothing for today</p>
             ) : (
-              filteredList.map(({ text, id, completed, priority }) => (
-                <FilterList text={text} id={id} completed={completed} priority={priority} handleCompleteToggle={handleCompleteToggle} handleEditPriority={handleEditPriority}  handleDelete={handleDelete} handleEdit={handleEdit} editId={editId} />
+              filteredList.map((todo) => (
+                <FilterList text={todo.text} id={todo.id} completed={todo.completed} priority={todo.priority} handleCompleteToggle={handleCompleteToggle} handleEditPriority={handleEditPriority}  handleDelete={handleDelete} handleEdit={handleEdit} editId={editId} />
                 
               ))
             )}
